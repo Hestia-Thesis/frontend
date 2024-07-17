@@ -53,6 +53,8 @@ export default {
       'themecolor-red-700' : '#7D0F27',
       'themecolor-red-800' : '#590517',
       'themecolor-red-900' : '#38000C',
+      // BLACK
+      'black' : '#000000'
     },
     extend: {
       spacing: {
@@ -67,6 +69,7 @@ export default {
         '12px' : '12px',
         '15px' : '15px',
         '20px' : '20px',
+        '24px' : '24px',
         '25px' : '25px',
         '30px' : '30px',
         '35px' : '35px',
