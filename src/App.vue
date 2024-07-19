@@ -2,6 +2,10 @@
 import Navigation from './components/Navigation.vue'
 import Index from './pages/Index.vue'
 import Login from './pages/Login.vue'
+import { ref } from 'vue';
+
+const activePage = ref
+
 
 </script>
 
