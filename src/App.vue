@@ -1,11 +1,5 @@
 <script setup lang="ts">
 import Navigation from './components/Navigation.vue'
-import Index from './pages/Index.vue'
-import Login from './pages/Login.vue'
-import { ref } from 'vue';
-
-const activePage = ref
-
 
 </script>
 
@@ -15,6 +9,6 @@ const activePage = ref
       <Navigation/>
     </div>
     <Navigation/>
-    <Index></Index>
+    <RouterView/>
   </div>
 </template>
