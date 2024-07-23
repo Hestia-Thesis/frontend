@@ -54,7 +54,9 @@ export default {
       'themecolor-red-800' : '#590517',
       'themecolor-red-900' : '#38000C',
       // BLACK
-      'black' : '#000000'
+      'black' : '#000000',
+      // WHITE
+      'white' : '#FFFFFF'
     },
     extend: {
       spacing: {

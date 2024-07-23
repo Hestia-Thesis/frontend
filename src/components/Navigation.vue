@@ -1,23 +1,62 @@
 <script setup lang="ts">
-    const navItems = [
-        {name : "Get started"},
-        {name : "Story"},
-        {name : "About us"}]
+import {ref} from "vue"
+import { RouterLink } from "vue-router"
+    const navItems = {
+        homepage : {
+            name : "Hestia",
+            route : "/",
+            isHovered: ref(false)
+        },
+
+        pages : [{
+            name : "Get started",
+            route: "/login",
+            isHovered: ref(false)
+        },
+        {
+            name : "Story",
+            route: "/story",
+            isHovered: ref(false)
+        },
+        {
+            name : "About us",
+            route: "/about",
+            isHovered: ref(false)
+        }]
+    }
+
+
 </script>
 
 <template>
-    <div class="bg-themecolor-accent-main-500 border-2 border-themecolor-accent-main-600">
-        <nav class="flex w-full justify-between items-center py-2 h-16">
-            <div id="company-name" class="text-3xl border-r-2 border-themecolor-accent-main-600 px-12 md:px-16 lg:px-20 xl:px-24 h-16 flex items-center">
-                Hestia
+    <div class="bg-themecolor-accent-main-500 border-2 border-themecolor-accent-main-600 text-themecolor-neutral-100">
+        <nav class="flex w-full justify-between items-center h-16">
+            <div id="company-name" class="text-3xl border-r-2 border-themecolor-accent-main-600 py-2 px-12 md:px-16 lg:px-20 xl:px-24 h-16 flex items-center"
+            :class="{ 'bg-themecolor-accent-main-600' : navItems.homepage.isHovered.value }"
+            >
+                <RouterLink :to="navItems.homepage.route" @mouseover="navItems.homepage.isHovered.value = true" @mouseleave="navItems.homepage.isHovered.value = false" 
+                    class="hover:text-themecolor-neutral-100"
+                >
+                    {{ navItems.homepage.name }}
+                </RouterLink>
             </div>
             <div id="company-logo">
 
             </div>
 
-            <ul class="flex justify-between">
-                <li class="text-lg px-8 md:px-12 lg:px-16 xl:px-20" v-for="item in navItems">
-                    {{ item.name }}
+            <ul class="flex justify-between h-full">
+                <li v-for="item in navItems.pages">
+                    <div class="flex items-center text-lg py-2 h-full px-8 md:px-12 lg:px-16 xl:px-20"
+                        :class="{ 'bg-themecolor-accent-main-600' : item.isHovered.value }"
+                    >
+                    
+                        <RouterLink :to="item.route" @mouseover="item.isHovered.value = true" @mouseleave="item.isHovered.value = false" 
+                            class="hover:text-themecolor-neutral-100"
+                        >
+                            {{ item.name }}
+                        </RouterLink>
+
+                    </div>
                 </li>
             </ul>
         </nav>

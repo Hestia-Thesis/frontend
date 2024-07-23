@@ -8,7 +8,7 @@ import Section from '../components/Section.vue'
     <PageWrapper>
         <Section>            
             <div>
-                Login
+                Story
             </div>
         </Section>
     </PageWrapper>
