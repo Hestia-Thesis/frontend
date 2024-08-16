@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import PageWrapper from '../components/PageWrapper.vue'
 import Section from '../components/Section.vue'
-
+import VButton from '../components/VButton.vue'
 </script>
 
 <template>
@@ -24,6 +24,13 @@ import Section from '../components/Section.vue'
                 </div>
             </div>
         </Section>
+        <div>
+            <p>Want to try it out yourself?</p>
+            <p>Get started here</p>
+            <VButton route="/login">
+                Get Started
+            </VButton>
+        </div>
     </PageWrapper>
 </template>
 
