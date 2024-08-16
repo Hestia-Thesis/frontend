@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import PageWrapper from '../components/PageWrapper.vue'
 import Section from '../components/Section.vue'
+import { ref } from 'vue'
+import LoginForm from '../components/LoginForm.vue'
 
 </script>
 
 <template>
     <PageWrapper>
         <Section>            
-            <div>
-                Login
-            </div>
+            <LoginForm/>
         </Section>
     </PageWrapper>
 </template>
