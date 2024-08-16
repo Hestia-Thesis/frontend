@@ -1,9 +1,9 @@
 <script setup lang="ts">
-    const props = defineProps({
-        leftIcon: String,
-        rightIcon: String,
-        route: String
-    })
+    const props = defineProps<{
+        route?: string,
+        leftIcon?: string,
+        rightIcon?: string
+    }>()
 </script>
 
 <template>
