@@ -24,9 +24,12 @@ import VButton from '../components/VButton.vue'
                 </div>
             </div>
         </Section>
-        <div>
-            <p>Want to try it out yourself?</p>
-            <p>Get started here</p>
+        <div class="sm:mb-15px md:mb-40px">
+            <div class="text-lg font-normal">
+                <p>Want to try it out yourself?</p>
+                <p>Get started here</p>
+            </div>
+            
             <VButton route="/login">
                 Get Started
             </VButton>
