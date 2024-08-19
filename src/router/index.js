@@ -3,6 +3,7 @@ import Index from '../pages/Index.vue'
 import Login from '../pages/Login.vue'
 import Story from '../pages/Story.vue'
 import About from '../pages/About.vue'
+import Signup from '../pages/Signup.vue'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,9 +25,15 @@ const router = createRouter({
         },
         {
             path:'/about',
-            name: '/about',
+            name: 'About',
             component: About
+        },
+        {
+            path:'/signup',
+            name: 'Signup',
+            component: Signup
         }
+
     ]
 })
 
