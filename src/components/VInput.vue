@@ -9,6 +9,7 @@ import VIcon from './VIcon.vue';
         icon?: string;
         type?: string;
         validationError?: boolean;
+        viewPassword?: boolean;
     }>(), {
         type: "text",
         validationError: false
@@ -45,13 +46,13 @@ import VIcon from './VIcon.vue';
             class="relative flex flex-col text-xs mb-1 text-left text-gray-700">
                 {{ label }}
             </label>
-            <input id="inputField" 
+            <input
                 class="w-full bg-themecolor-neutral-100 py-2px px-5px text-sm focus:outline-none rounded-sm border-2" 
                 :class="{
                     'pl-25px' : icon,
-                    'pr-25px' : props.type == 'password',
+                    'pr-25px' : props.type == 'password' && props.viewPassword,
                     'border-themecolor-neutral-500' : !props.validationError,
-                    'border-themecolor-red-500 bg-themecolor-red-100 placeholder:text-themecolor-red-500' : props.validationError
+                    '!border-themecolor-red-500 !bg-themecolor-red-100 placeholder:text-themecolor-red-500' : props.validationError
                 }"
                 
                 :type="currentInputType"
@@ -64,10 +65,14 @@ import VIcon from './VIcon.vue';
             </div>
             <div id="passwordIcon" 
             class="absolute right-5px top-1/2 transform cursor-pointer text-gray-700 select-none"
-            v-if="props.type === 'password' && modelValue" @click="togglePasswordVisibility">
+            v-if="props.type === 'password' && modelValue && viewPassword" @click="togglePasswordVisibility">
                 <VIcon v-if="showPassword" size="md" name="visibility_off"/>
                 <VIcon v-if="!showPassword" size="md" name="visibility"/>
             </div>
         </div>
     </div>
 </template>
+
+<style scoped>
+
+</style>
