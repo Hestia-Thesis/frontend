@@ -57,6 +57,8 @@ export default {
       'black' : '#000000',
       // WHITE
       'white' : '#FFFFFF',
+      // BLUE
+      'blue' : 'blue',
       // GRAY
       'gray-100': '#F5F5F5',
       'gray-200': '#E0E0E0',
