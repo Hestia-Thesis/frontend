@@ -13,8 +13,10 @@
     "@vuelidate/validators": "^2.0.4",
     "crypto-js": "^4.2.0",
     "js-sha3": "^0.9.3",
+    "pinia": "^2.2.2",
     "vue": "^3.4.21",
-    "vue-router": "^4.4.0"
+    "vue-router": "^4.4.0",
+    "vue-toastification": "^2.0.0-rc.5"
   },
   "devDependencies": {
     "@types/crypto-js": "^4.2.2",
