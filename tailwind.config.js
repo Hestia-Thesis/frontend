@@ -69,6 +69,17 @@ export default {
       'gray-900': '#2A2A2A',
         },
     extend: {
+      fontSize: {
+        'xs' : '12px',
+        'sm' : '18px',
+        'base' : '24px',
+        'lg' : '30px',
+        'xl' : '36px',
+        '2xl' : '42px',
+        '3xl' : '48px',
+        '4xl' : '54px',
+        '5xl' : '60px'
+      },
       spacing: {
         '1px': '1px',
         '2px': '2px',

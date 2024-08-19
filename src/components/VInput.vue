@@ -17,7 +17,7 @@ import VIcon from './VIcon.vue';
     const emit = defineEmits<{
         (event: "update:modelValue", value: string): void;
     }>();
-    
+
     function handleInput(e: Event) {
         const value = (e.target as HTMLInputElement).value;
         emit("update:modelValue", value);
@@ -40,7 +40,7 @@ import VIcon from './VIcon.vue';
 
 <template>
     <div>
-        <div class="relative inline-block my-10px mb-5 w-200px">
+        <div class="relative inline-block my-10px mb-5 w-200px sm:w-300px">
             <label v-if="label" for="inputField"
             class="relative flex flex-col text-xs mb-1 text-left text-gray-700">
                 {{ label }}

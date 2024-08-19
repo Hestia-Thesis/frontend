@@ -79,7 +79,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div>
+    <div class="text-base">
         Enter your credentials
     </div>
         <div class="my-20px">
@@ -92,7 +92,7 @@ onMounted(() => {
     
         </div>
         <div class="relative my-20px">
-        <VButton type="submit" @click="submitForm()">
+        <VButton class="font-semibold text-base" type="submit" @click="submitForm()">
             Log in
         </VButton>
     </div>

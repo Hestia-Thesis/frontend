@@ -29,9 +29,9 @@ import { RouterLink } from "vue-router"
 </script>
 
 <template>
-    <div class="bg-themecolor-accent-main-500 border-2 border-themecolor-accent-main-600 text-themecolor-neutral-100">
-        <nav class="flex w-full justify-between items-center h-16">
-            <div id="company-name" class="text-3xl border-r-2 border-themecolor-accent-main-600 py-2 px-12 md:px-16 lg:px-20 xl:px-24 h-16 flex items-center"
+    <div class="bg-themecolor-accent-main-500 border-2 border-themecolor-accent-main-600 text-themecolor-neutral-100 z-20">
+        <nav class="flex w-full justify-between items-center h-20">
+            <div id="company-name" class="text-3xl border-r-2 border-themecolor-accent-main-600 py-2 px-12 md:px-16 lg:px-20 xl:px-24 h-20 flex items-center"
             :class="{ 'bg-themecolor-accent-main-600' : navItems.homepage.isHovered.value }"
             >
                 <RouterLink :to="navItems.homepage.route" @mouseover="navItems.homepage.isHovered.value = true" @mouseleave="navItems.homepage.isHovered.value = false" 

@@ -8,14 +8,15 @@ import VButton from '../components/VButton.vue'
     <PageWrapper>
         <Section>            
             <div>
-               <h3 class="text-lg font-medium mb-24px">
-                    Welcome to Hestia: the app that turns your energy consumption into your personal story
+               <h3 class="text-lg font-medium mb-32px">
+                    <p class="mb-0">Welcome to Hestia:</p>
+                    <p>The app that turns your energy consumption into your personal story</p>
                 </h3> 
-                <div class="text-left">
+                <div class="text-left text-sm">
                     <p>
                         Once the application knows your energy consumption information, the app can generate monthly stories based on how high or low your energy usage is.
                     </p>
-                    <p class="font-medium">
+                    <p class="font-medium mt-24px">
                         How do we do this?
                     </p>
                     <p>
@@ -24,13 +25,13 @@ import VButton from '../components/VButton.vue'
                 </div>
             </div>
         </Section>
-        <div class="sm:mb-15px md:mb-40px">
-            <div class="text-lg font-normal">
+        <div class="mt-42px sm:mb-15px md:mb-24px">
+            <div class="text-base font-normal mb-30px">
                 <p>Want to try it out yourself?</p>
                 <p>Get started here</p>
             </div>
             
-            <VButton route="/login">
+            <VButton class="font-semibold text-base" route="/login">
                 Get Started
             </VButton>
         </div>
