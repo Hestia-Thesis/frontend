@@ -53,10 +53,6 @@ button {
 button:hover {
   border-color: #646cff;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 
 .card {
   padding: 2em;
@@ -67,6 +63,22 @@ button:focus-visible {
   padding: 0;
   text-align: center;
 }
+
+/* Prevent default autofill background, but allow overriding */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #E5FFFA inset !important;
+  box-shadow: 0 0 0px 1000px #E5FFFA inset !important;
+  -webkit-text-fill-color: #000 !important;
+}
+
+/* Similar styles for Firefox */
+input:-moz-autofill {
+  box-shadow: 0 0 0px 1000px #E5FFFA inset !important;
+  -moz-box-shadow: 0 0 0px 1000px #E5FFFA inset !important;
+  -moz-text-fill-color: #000 !important;
+}
+
+
 
 @media (prefers-color-scheme: light) {
   :root {
