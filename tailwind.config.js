@@ -158,6 +158,9 @@ export default {
         '450px': '450px',
         '475px': '475px',
         '500px': '500px',
+      },
+      screens: {
+        '3xl' : '1800px'
       }
     },
   },
