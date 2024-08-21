@@ -1,5 +1,25 @@
 <script setup lang="ts">
 import Navigation from './components/Navigation.vue'
+import { useUserStore } from './stores/UserStore';
+import { useRoute, useRouter } from 'vue-router';
+import { computed, onMounted, watch } from 'vue';
+
+
+  const userStore = useUserStore();
+  const route = useRoute();
+  const router = useRouter();
+  const path = computed(() => route.path)
+
+  const changeRoute = () => {
+      if(!userStore.isAuthenticated && path.value == '/profile') {
+        setTimeout(() => {
+          router.push('/login')
+        }, 1000)
+      }
+
+  }
+
+watch(path, changeRoute)
 
 </script>
 
