@@ -1,9 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { useUserStore } from '../stores/UserStore'
+import { watch } from 'vue'
 import Index from '../pages/Index.vue'
 import Login from '../pages/Login.vue'
 import Story from '../pages/Story.vue'
 import About from '../pages/About.vue'
 import Signup from '../pages/Signup.vue'
+import Profile from '../pages/Profile.vue'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,9 +35,17 @@ const router = createRouter({
             path:'/signup',
             name: 'Signup',
             component: Signup
+        },
+        {
+            path:'/profile',
+            name: 'Profile',
+            component: Profile
         }
 
     ]
+
+    
+
 })
 
 export default router
