@@ -7,9 +7,10 @@ import { required, email, helpers } from '@vuelidate/validators';
 import { UserInterface } from '../models/Interfaces.ts';
 import { sha3_512 } from 'js-sha3';
 import { useUserStore } from '../stores/UserStore.ts';
+import { useRouter } from 'vue-router';
 
-
-const userStore = useUserStore()
+const router = useRouter();
+const userStore = useUserStore();
 
 const formData = reactive({
     email : "",
@@ -35,8 +36,12 @@ const submitForm = async () => {
     const result = await v$.value.$validate();
     if(result) {
         alert("Succesfully logged in!")
+        await userStore.setUser(foundUser())
+        setTimeout(() => {
+            router.push('/profile')
+        }, 1000)
     }
-    userStore.setUser(foundUser())
+
 }
 
 const stopValidation = (field : keyof typeof formData) => {
