@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import PageWrapper from '../components/PageWrapper.vue'
 import Section from '../components/Section.vue'
-import { RouterLink } from 'vue-router';
 import LoginForm from '../components/LoginForm.vue'
 import VButton from '../components/VButton.vue';
 
