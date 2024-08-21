@@ -10,9 +10,12 @@ import VIcon from './VIcon.vue';
         type?: string;
         validationError?: boolean;
         viewPassword?: boolean;
+        size?: 'sm' | 'md' | 'lg';
+        options?: Array<string>
     }>(), {
         type: "text",
-        validationError: false
+        validationError: false,
+        size: "md"
     });
 
     const emit = defineEmits<{
@@ -41,12 +44,36 @@ import VIcon from './VIcon.vue';
 
 <template>
     <div>
-        <div class="relative inline-block my-10px mb-5 w-200px sm:w-300px">
+        <div class="relative inline-block my-10px mb-5"
+            :class="{
+                'w-150px' : props.size == 'sm',
+                'w-200px sm:w-300px' : props.size == 'md',
+                'w-300px sm:w-450px' : props.size == 'lg'
+            }"
+        >
             <label v-if="label" for="inputField"
             class="relative flex flex-col text-xs mb-1 text-left text-gray-700">
                 {{ label }}
             </label>
-            <input
+            <!-- Select Input -->
+            <select v-if="props.type == 'select'"
+                class="w-full bg-themecolor-neutral-100 py-2px px-5px text-sm focus:outline-none rounded-sm border-2"
+                :class="{
+                    'pl-25px' : icon,
+                    'border-themecolor-neutral-500' : !props.validationError,
+                    '!border-themecolor-red-500 !bg-themecolor-red-100 placeholder:text-themecolor-red-500' : props.validationError
+                }"
+                @change="handleInput"
+                :value="modelValue"
+                
+            >
+                <option v-for="option in props.options" :value="option">{{ option }}</option>
+
+
+            </select>
+            
+            <!-- Regular Input -->
+            <input v-else
                 class="w-full bg-themecolor-neutral-100 py-2px px-5px text-sm focus:outline-none rounded-sm border-2" 
                 :class="{
                     'pl-25px' : icon,
