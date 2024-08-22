@@ -11,10 +11,11 @@ import { computed, onMounted, watch } from 'vue';
   const path = computed(() => route.path)
 
   const changeRoute = () => {
-      if(!userStore.isAuthenticated && path.value == '/profile') {
-        setTimeout(() => {
-          router.push('/login')
-        }, 1000)
+      if(!userStore.isAuthenticated && (path.value == '/profile' || path.value == '/energy')) {
+        router.push('/login')
+      }
+      if(userStore.isAuthenticated && (path.value == '/login' || path.value == '/signup')) {
+        router.push('/profile')
       }
 
   }
