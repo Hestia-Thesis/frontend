@@ -10,8 +10,9 @@ import VIcon from './VIcon.vue';
         type?: string;
         validationError?: boolean;
         viewPassword?: boolean;
-        size?: 'sm' | 'md' | 'lg';
-        options?: Array<string>
+        size?: 'xs' | 'sm' | 'md' | 'lg';
+        options?: Array<string>;
+        disabled?: boolean;
     }>(), {
         type: "text",
         validationError: false,
@@ -46,6 +47,7 @@ import VIcon from './VIcon.vue';
     <div>
         <div class="relative inline-block my-10px mb-5"
             :class="{
+                'w-75px' : props.size == 'xs',
                 'w-150px' : props.size == 'sm',
                 'w-200px sm:w-300px' : props.size == 'md',
                 'w-300px sm:w-450px' : props.size == 'lg'
@@ -65,7 +67,7 @@ import VIcon from './VIcon.vue';
                 }"
                 @change="handleInput"
                 :value="modelValue"
-                
+                :disabled="disabled"
             >
                 <option v-for="option in props.options" :value="option">{{ option }}</option>
 
@@ -78,14 +80,17 @@ import VIcon from './VIcon.vue';
                 :class="{
                     'pl-25px' : icon,
                     'pr-25px' : props.type == 'password' && props.viewPassword,
-                    'border-themecolor-neutral-500' : !props.validationError,
-                    '!border-themecolor-red-500 !bg-themecolor-red-100 placeholder:text-themecolor-red-500' : props.validationError
+                    'border-themecolor-neutral-500' : !props.validationError && !props.disabled,
+                    '!border-themecolor-red-500 !bg-themecolor-red-100 placeholder:text-themecolor-red-500' : props.validationError,
+                    'bg-themecolor-neutral-100' : !props.disabled,
+                    'bg-themecolor-neutral-500 border-themecolor-neutral-600' : props.disabled
                 }"
                 
                 :type="currentInputType"
                 :placeholder="placeholder || ''" 
                 :value="modelValue"
                 @input="handleInput"
+                :disabled="disabled"
             >
             <div class="absolute flex items-center text-xs w-full">
                 <slot></slot>
