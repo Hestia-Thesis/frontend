@@ -49,7 +49,6 @@ import { useRouter } from 'vue-router';
             }
         }
         else {
-            console.log("tried to identify, didn't work")
             throw new Error("User is not logged in")
         }
     }
@@ -208,10 +207,10 @@ import { useRouter } from 'vue-router';
         else {
             alert('Failed to save profile')
         }
+        userStore.setUserDetails();
     }
 
     const postUserDetails = (userDetails : UserDetails) => {
-        console.log(JSON.stringify(userDetails))
         return fetch("http://127.0.0.1:8000/user_details", {
             method: "POST",
             body: JSON.stringify(userDetails),
