@@ -7,6 +7,7 @@ import Story from '../pages/Story.vue'
 import About from '../pages/About.vue'
 import Signup from '../pages/Signup.vue'
 import Profile from '../pages/Profile.vue'
+import Energy from '../pages/Energy.vue'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,6 +41,11 @@ const router = createRouter({
             path:'/profile',
             name: 'Profile',
             component: Profile
+        },
+        {
+            path: '/energy',
+            name: 'Energy',
+            component: Energy
         }
 
     ]
