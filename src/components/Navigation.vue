@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from "vue"
+import { computed, ref, watch } from "vue"
 import { RouterLink } from "vue-router"
 import { useUserStore } from "../stores/UserStore";
 
@@ -42,6 +42,9 @@ import { useUserStore } from "../stores/UserStore";
                 route: "/profile",
                 isHovered: ref(false)
             })
+
+            navItems.pages[0].name = "Energy"
+            navItems.pages[0].route = "/energy"
         }
         else {
             navItems.pages.push({
@@ -49,6 +52,9 @@ import { useUserStore } from "../stores/UserStore";
                 route: "/login",
                 isHovered: ref(false)
             })
+
+            navItems.pages[0].name = "Get started"
+            navItems.pages[0].route = "/login"
         }
     }
 
