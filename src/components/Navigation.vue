@@ -36,7 +36,7 @@ import { useUserStore } from "../stores/UserStore";
 
     const changeNavItems = () => {
         navItems.pages.pop();
-        if(localStorage.getItem("user")) {
+        if(userStore.isAuthenticated) {
             navItems.pages.push({
                 name: "Profile",
                 route: "/profile",

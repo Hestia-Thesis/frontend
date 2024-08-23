@@ -25,6 +25,7 @@ export const useUserStore = defineStore("user", () => {
     const clearUser = () => {
         user.value = undefined;
         hasUserDetails.value = false;
+        localStorage.removeItem("user");
     };
 
     const setUserDetails = () => {
@@ -60,8 +61,14 @@ export const useUserStore = defineStore("user", () => {
     
     const userFromStorage = localStorage.getItem("user");
 
-    if (userFromStorage) {
-        user.value = JSON.parse(userFromStorage);
+    if (userFromStorage != undefined && userFromStorage != "") {
+        try {
+            user.value = JSON.parse(userFromStorage);
+        }
+        catch(error) {
+            console.error("Failed to fetch user from local storage", error);
+            localStorage.removeItem("user")
+        }
     }
 
     watch(
