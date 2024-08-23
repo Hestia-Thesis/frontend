@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch } from "vue"
+import { computed, onMounted, ref, watch } from "vue"
 import { RouterLink } from "vue-router"
 import { useUserStore } from "../stores/UserStore";
 
@@ -36,7 +36,7 @@ import { useUserStore } from "../stores/UserStore";
 
     const changeNavItems = () => {
         navItems.pages.pop();
-        if(userStore.isAuthenticated) {
+        if(localStorage.getItem("user")) {
             navItems.pages.push({
                 name: "Profile",
                 route: "/profile",
@@ -59,6 +59,10 @@ import { useUserStore } from "../stores/UserStore";
     }
 
     watch(userStore, changeNavItems)
+
+    onMounted(
+       () => changeNavItems()
+    )
 
 </script>
 
