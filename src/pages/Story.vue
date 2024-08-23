@@ -87,12 +87,14 @@ onMounted(() => {
                 {{ loadedStoryData.story }}
             </div>
         </Section>
-        <VButton :disabled="!ifExists(storyData[storyIndex-1])" @click="setStoryIndex(storyIndex-1)">
+        <div>
+            <VButton :disabled="!ifExists(storyData[storyIndex-1])" @click="setStoryIndex(storyIndex-1)">
             Previous
-        </VButton>
-        <VButton :disabled="!ifExists(storyData[storyIndex+1])" @click="setStoryIndex(storyIndex+1)">
-            Next
-        </VButton>
+            </VButton>
+            <VButton :disabled="!ifExists(storyData[storyIndex+1])" @click="setStoryIndex(storyIndex+1)">
+                Next
+            </VButton>
+        </div>
     </PageWrapper>
 </template>
 
