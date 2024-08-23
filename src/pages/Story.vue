@@ -55,6 +55,13 @@ const fetchEnergyData = () => {
     })
 }
 
+const ifExists = (value: any) => {
+    if(value) {
+        return true
+    }
+    return false
+}
+
 onMounted(() => {
     fetchEnergyData().then((data) => {
         storyData.value = data
@@ -80,10 +87,10 @@ onMounted(() => {
                 {{ loadedStoryData.story }}
             </div>
         </Section>
-        <VButton @click="setStoryIndex(storyIndex-1)">
+        <VButton :disabled="!ifExists(storyData[storyIndex-1])" @click="setStoryIndex(storyIndex-1)">
             Previous
         </VButton>
-        <VButton @click="setStoryIndex(storyIndex+1)">
+        <VButton :disabled="!ifExists(storyData[storyIndex+1])" @click="setStoryIndex(storyIndex+1)">
             Next
         </VButton>
     </PageWrapper>
