@@ -8,6 +8,9 @@ import VButton from '../components/VButton.vue';
 
 <template>
     <PageWrapper>
+        <div class="text-lg font-semibold">
+            Hestia
+        </div>
         <Section>            
             <LoginForm/>
         </Section>

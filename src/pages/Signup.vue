@@ -7,7 +7,10 @@ import SignupForm from '../components/SignupForm.vue';
 
 <template>
     <PageWrapper>
-        <Section>            
+        <div class="text-lg font-semibold">
+            Hestia
+        </div>
+        <Section>                        
             <SignupForm/>
         </Section>
     </PageWrapper>

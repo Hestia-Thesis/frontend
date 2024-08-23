@@ -14,7 +14,7 @@ import { useUserStore } from "../stores/UserStore";
 
         pages : [{
             name : "Get started",
-            route: "/login",
+            route: "/signup",
             isHovered: ref(false)
         },
         {
@@ -54,7 +54,7 @@ import { useUserStore } from "../stores/UserStore";
             })
 
             navItems.pages[0].name = "Get started"
-            navItems.pages[0].route = "/login"
+            navItems.pages[0].route = "/signup"
         }
     }
 
