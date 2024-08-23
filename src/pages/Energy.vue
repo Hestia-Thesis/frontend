@@ -6,7 +6,7 @@ import VInput from '../components/VInput.vue';
 import DailyView from '../components/EnergyPanel/DailyView.vue';
 import MonthlyView from '../components/EnergyPanel/MonthlyView.vue';
 
-    const views = ['Daily', 'Monthly']
+    const views = ['Daily']
 
     const panelView = ref('Daily')
 
