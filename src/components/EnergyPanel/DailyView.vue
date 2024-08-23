@@ -174,27 +174,27 @@ onMounted(() => {
             </div>
             <div class="relative col-span-2">
                 <p class="text-xs lg:text-[14px] xl:text-[16px] 2xl:text-sm font-medium absolute z-10 left-1/2 transform -translate-x-1/2 text-center w-full">{{ formData[0].day }}</p>
-                <VInput class="mt-24px" size="xs" v-model="formData[0].consumed">
+                <VInput class="mt-24px" size="xs" metric="KWh" v-model="formData[0].consumed">
                 </VInput>
             </div>
             <div class="relative col-span-2">
                 <p class="text-xs lg:text-[14px] xl:text-[16px] 2xl:text-sm font-medium absolute z-10 left-1/2 transform -translate-x-1/2 text-center w-full">{{ formData[1].day }}</p>
-                <VInput class="mt-24px" size="xs" v-model="formData[1].consumed">
+                <VInput class="mt-24px" size="xs" metric="KWh" v-model="formData[1].consumed">
                 </VInput>
             </div>
             <div class="relative col-span-2">
                 <p class="text-xs lg:text-[14px] xl:text-[16px] 2xl:text-sm font-medium absolute z-10 left-1/2 transform -translate-x-1/2 text-center w-full">{{ formData[2].day }}</p>
-                <VInput class="mt-24px" size="xs" v-model="formData[2].consumed">
+                <VInput class="mt-24px" size="xs" metric="KWh" v-model="formData[2].consumed">
                 </VInput>
             </div>
             <div class="relative col-span-2">
                 <p class="text-xs lg:text-[14px] xl:text-[16px] 2xl:text-sm font-medium absolute z-10 left-1/2 transform -translate-x-1/2 text-center w-full">Yesterday</p>
-                <VInput class="mt-24px" size="xs" v-model="formData[3].consumed">
+                <VInput class="mt-24px" size="xs" metric="KWh" v-model="formData[3].consumed">
                 </VInput>
             </div>
             <div class="relative col-span-2">
                 <p class="text-xs lg:text-[14px] xl:text-[16px] 2xl:text-sm font-medium absolute z-10 left-1/2 transform -translate-x-1/2 text-center w-full">Today</p>
-                <VInput class="mt-24px" size="xs" v-model="formData[4].consumed">
+                <VInput class="mt-24px" size="xs" metric="KWh" v-model="formData[4].consumed">
                 </VInput>
             </div>
         </div>
@@ -203,23 +203,23 @@ onMounted(() => {
                 <p>Predicted</p>
             </div>
             <div class="relative col-span-2">
-                <VInput disabled size="xs" v-model="formData[0].predicted">
+                <VInput disabled size="xs" metric="KWh" v-model="formData[0].predicted">
                 </VInput>
             </div>
             <div class="relative col-span-2">
-                <VInput disabled size="xs" v-model="formData[1].predicted">
+                <VInput disabled size="xs" metric="KWh" v-model="formData[1].predicted">
                 </VInput>
             </div>
             <div class="relative col-span-2">
-                <VInput disabled size="xs" v-model="formData[2].predicted">
+                <VInput disabled size="xs" metric="KWh" v-model="formData[2].predicted">
                 </VInput>
             </div>
             <div class="relative col-span-2">
-                <VInput disabled size="xs" v-model="formData[3].predicted">
+                <VInput disabled size="xs" metric="KWh" v-model="formData[3].predicted">
                 </VInput>
             </div>
             <div class="relative col-span-2">
-                <VInput disabled size="xs" v-model="formData[4].predicted">
+                <VInput disabled size="xs" metric="KWh" v-model="formData[4].predicted">
                 </VInput>
             </div>
         </div>
