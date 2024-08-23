@@ -2,7 +2,8 @@
     const props = defineProps<{
         route?: string,
         leftIcon?: string,
-        rightIcon?: string
+        rightIcon?: string,
+        disabled?: boolean
     }>()
 
     const emits = defineEmits<{
@@ -10,7 +11,7 @@
     }>()
 
     function handleClick(event : MouseEvent){
-        emits('click', event)
+        if(!props.disabled) emits('click', event)
     }
 
 </script>
@@ -20,20 +21,25 @@
     <RouterLink v-if="route" :to="route">
         <div 
         @click="handleClick"
-        class="inline-block bg-themecolor-accent-main-500 text-themecolor-neutral-100 hover:text-themecolor-neutral-100 
-        border-0 border-b-4 border-r-4 active:border-2 hover:border-2 
-        border-themecolor-accent-main-700 hover:border-themecolor-accent-main-700 active:bg-themecolor-accent-main-700 active:border-themecolor-accent-main-700
-        px-25px py-5px rounded-sm cursor-pointer select-none"
+        class="inline-block 
+        border-0 border-b-4 border-r-4 px-25px py-5px rounded-sm select-none"
+        :class="{
+            'bg-themecolor-accent-main-500 text-themecolor-neutral-100 hover:text-themecolor-neutral-100 border-themecolor-accent-main-700 border-themecolor-accent-main-700 active:bg-themecolor-accent-main-700 active:border-themecolor-accent-main-700 active:border-2 hover:border-2 cursor-pointer' : !props.disabled,
+            'bg-themecolor-neutral-500 text-back hover:text-back border-themecolor-accent-main-700 border-themecolor-neutral-700 hover:border-themecolor-neutral-700 active:border-themecolor-neutral-main-700' : props.disabled,
+        }"
         :href="props.route">
             <slot/>
         </div>
     </RouterLink>
     <div v-else 
     @click="handleClick"
-    class="inline-block bg-themecolor-accent-main-500 text-themecolor-neutral-100 hover:text-themecolor-neutral-100 
-        border-0 border-b-4 border-r-4 active:border-2 hover:border-2 
-        border-themecolor-accent-main-700 hover:border-themecolor-accent-main-700 active:bg-themecolor-accent-main-700 active:border-themecolor-accent-main-700
-        px-25px py-5px rounded-sm cursor-pointer select-none">
+    class="inline-block 
+        border-0 border-b-4 border-r-4 px-25px py-5px rounded-sm select-none"
+        :class="{
+            'bg-themecolor-accent-main-500 text-themecolor-neutral-100 hover:text-themecolor-neutral-100 border-themecolor-accent-main-700 border-themecolor-accent-main-700 active:bg-themecolor-accent-main-700 active:border-themecolor-accent-main-700 active:border-2 hover:border-2 cursor-pointer' : !props.disabled,
+            'bg-themecolor-neutral-500 text-back hover:text-back border-themecolor-accent-main-700 border-themecolor-neutral-700 hover:border-themecolor-neutral-700 active:bg-themecolor-neutral-700 active:border-themecolor-neutral-main-700' : props.disabled,
+        }"
+    >
         <slot/>
     </div v-else>
 </template>
