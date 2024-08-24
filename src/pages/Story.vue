@@ -78,7 +78,7 @@ onMounted(() => {
         <div class="text-lg font-semibold">
             Story
         </div>
-        <Section>            
+        <Section v-if="loadedStoryData.date">            
             <div class="text-base font-medium mb-40px">
                 {{ loadedStoryData.date }}
             </div>
@@ -87,7 +87,10 @@ onMounted(() => {
                 {{ loadedStoryData.story }}
             </div>
         </Section>
-        <div>
+        <Section v-else class="text-lg font-semibold">
+            No stories are generated yet. Come back later
+        </Section>
+        <div v-if="loadedStoryData.date">
             <VButton :disabled="!ifExists(storyData[storyIndex-1])" @click="setStoryIndex(storyIndex-1)">
             Previous
             </VButton>

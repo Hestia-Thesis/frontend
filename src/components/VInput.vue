@@ -81,7 +81,7 @@ import VIcon from './VIcon.vue';
                 :class="{
                     'pl-25px' : icon,
                     'pr-25px' : props.type == 'password' && props.viewPassword,
-                    'pr-35px' : props.metric && size == 'xs' || 'sm',
+                    'pr-30px' : props.metric && size == 'xs' || 'sm',
                     'pr-50px' : props.metric && size == 'md' || 'lg',
                     'border-themecolor-neutral-500' : !props.validationError && !props.disabled,
                     '!border-themecolor-red-500 !bg-themecolor-red-100 placeholder:text-themecolor-red-500' : props.validationError,
