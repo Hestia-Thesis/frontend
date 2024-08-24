@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import PageWrapper from '../components/PageWrapper.vue'
 import Section from '../components/Section.vue'
 import { useUserStore } from '../stores/UserStore';

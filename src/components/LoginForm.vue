@@ -2,7 +2,7 @@
 import VInput from './VInput.vue';
 import VButton from './VButton.vue';
 import { reactive, ref, computed, onMounted } from 'vue';
-import useVuelidate, { Validation } from '@vuelidate/core';
+import useVuelidate from '@vuelidate/core';
 import { required, email, helpers } from '@vuelidate/validators';
 import { UserInterface } from '../models/Interfaces.ts';
 import { sha3_512 } from 'js-sha3';

@@ -5,11 +5,9 @@ import { UserDetails } from '../models/Interfaces';
 import { ref, computed } from 'vue';
 import { useUserStore } from '../stores/UserStore';
 import { useToast } from 'vue-toastification';
-import { useRouter } from 'vue-router';
 
     const userStore = useUserStore()
     const toast = useToast()
-    const router = useRouter()
     
     const userId = () => {
         if(userStore.user) {

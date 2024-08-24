@@ -2,7 +2,7 @@
 import PageWrapper from '../components/PageWrapper.vue'
 import Section from '../components/Section.vue'
 import { useUserStore } from '../stores/UserStore';
-import { useRouter, useRoute } from 'vue-router';
+import { useRouter} from 'vue-router';
 import VButton from '../components/VButton.vue';
 import UserDetailsForm from '../components/UserDetailsForm.vue';
 import { onMounted, ref } from 'vue';

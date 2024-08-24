@@ -1,6 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { useUserStore } from '../stores/UserStore'
-import { watch } from 'vue'
 import Index from '../pages/Index.vue'
 import Login from '../pages/Login.vue'
 import Story from '../pages/Story.vue'

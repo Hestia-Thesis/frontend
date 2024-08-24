@@ -2,7 +2,7 @@
 import Navigation from './components/Navigation.vue'
 import { useUserStore } from './stores/UserStore';
 import { useRoute, useRouter } from 'vue-router';
-import { computed, onMounted, watch } from 'vue';
+import { computed, watch } from 'vue';
 
 
   const userStore = useUserStore();

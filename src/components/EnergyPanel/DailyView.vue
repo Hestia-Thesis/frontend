@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import VInput from '../VInput.vue';
 import VButton from '../VButton.vue';
-import { ref, reactive, onMounted, computed } from 'vue';
+import { ref, reactive, onMounted} from 'vue';
 import { useUserStore } from '../../stores/UserStore';
 import { useToast } from 'vue-toastification';
 

@@ -12,28 +12,28 @@ const props = withDefaults(defineProps<{
 <template>
     <span v-if="filled" class="material-icons"
         :class="{
-            'text-sm' : size === 'sm',
-            'text-base' : size === 'md',
-            'text-lg' : size === 'lg',
-            'text-xl' : size === 'xl',
-            'text-2xl' : size === '2xl',
-            'text-3xl' : size === '3xl',
-            'text-4xl' : size === '4xl',
-            'text-5xl' : size === '5xl',
+            'text-sm' : props.size === 'sm',
+            'text-base' : props.size === 'md',
+            'text-lg' : props.size === 'lg',
+            'text-xl' : props.size === 'xl',
+            'text-2xl' : props.size === '2xl',
+            'text-3xl' : props.size === '3xl',
+            'text-4xl' : props.size === '4xl',
+            'text-5xl' : props.size === '5xl',
         }"
     >
         {{ name }}
     </span>
     <span v-else class="material-symbols-outlined"
         :class="{
-            'text-sm' : size === 'sm',
-            'text-base' : size === 'md',
-            'text-lg' : size === 'lg',
-            'text-xl' : size === 'xl',
-            'text-2xl' : size === '2xl',
-            'text-3xl' : size === '3xl',
-            'text-4xl' : size === '4xl',
-            'text-5xl' : size === '5xl',
+            'text-sm' : props.size === 'sm',
+            'text-base' : props.size === 'md',
+            'text-lg' : props.size === 'lg',
+            'text-xl' : props.size === 'xl',
+            'text-2xl' : props.size === '2xl',
+            'text-3xl' : props.size === '3xl',
+            'text-4xl' : props.size === '4xl',
+            'text-5xl' : props.size === '5xl',
         }"
     >
         {{ name }}
