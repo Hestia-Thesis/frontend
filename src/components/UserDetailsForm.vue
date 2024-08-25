@@ -199,7 +199,6 @@ import { api_url } from './api/api_url';
         else {
             response.value = await postUserDetails(formData.value)
         }
-        console.log(response.value)
         if(response.value) {
             alert('Profile successfully saved')
         }
