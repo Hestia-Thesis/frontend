@@ -234,12 +234,7 @@ onMounted(() => {
             <VButton v-if="!isProcessing" @click="submitForm" type="submit" class="mb-20px text-base font-semibold">
                 Save data
             </VButton>
-            <VButton v-else disabled type="submit" class="mb-20px text-base font-semibold">
-                <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="400" cy="400" fill="none"
-                    r="200" stroke-width="50" stroke="#000000" />
-                </svg>
-                <VIcon class="animate-spin h-5 w-5 mr-3" name="progress_activity"/> Processing...
+            <VButton v-else disabled type="submit" class="mb-20px text-base font-semibold animate-pulse">
             </VButton>
         </div>
     </div>
