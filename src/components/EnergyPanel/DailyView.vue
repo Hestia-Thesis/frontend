@@ -234,7 +234,8 @@ onMounted(() => {
             <VButton v-if="!isProcessing" @click="submitForm" type="submit" class="mb-20px text-base font-semibold">
                 Save data
             </VButton>
-            <VButton v-else disabled type="submit" class="mb-20px text-base font-semibold animate-pulse">
+            <VButton v-else disabled type="submit" class="mb-20px text-base font-semibold">
+                <p class="animate-pulse">Processing...</p>
             </VButton>
         </div>
     </div>
