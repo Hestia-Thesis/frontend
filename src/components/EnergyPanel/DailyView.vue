@@ -236,7 +236,7 @@ onMounted(() => {
                 Save data
             </VButton>
             <VButton v-else disabled type="submit" class="mb-20px text-base font-semibold">
-                <VIcon name="progress_activity"/> Processing...
+                <VIcon class="animate-spin h-5 w-5 mr-3" name="progress_activity"/> Processing...
             </VButton>
         </div>
     </div>
