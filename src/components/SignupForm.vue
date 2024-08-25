@@ -7,6 +7,7 @@ import { required, email, minLength, sameAs, helpers } from '@vuelidate/validato
 import { UserInterface } from '../models/Interfaces.ts';
 import { useToast } from 'vue-toastification';
 import { useRouter } from 'vue-router';
+import { api_url } from './api/api_url.ts';
 
 const toast = useToast();
 const router = useRouter();
@@ -95,7 +96,7 @@ const stopValidation = (field : keyof typeof formData) => {
 };
 
 const postUser = (user : UserInterface) => {
-    return fetch("https://api-hlzv.onrender.com/users", {
+    return fetch(api_url + "/users", {
         method: "POST",
         body: JSON.stringify({
             email: user.email,
@@ -115,7 +116,7 @@ const postUser = (user : UserInterface) => {
 }
 
 const fetchUsers = () => {
-    return fetch("https://api-hlzv.onrender.com/users")
+    return fetch(api_url + "/users")
     .then((response) => response.json())
     .catch((error) => {
         console.log(error)

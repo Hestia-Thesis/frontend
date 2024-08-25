@@ -4,6 +4,7 @@ import VButton from '../VButton.vue';
 import { ref, reactive, onMounted} from 'vue';
 import { useUserStore } from '../../stores/UserStore';
 import { useToast } from 'vue-toastification';
+import { api_url } from '../api/api_url';
 
 const toast = useToast()
 const userStore = useUserStore();
@@ -80,7 +81,7 @@ const formData = reactive([
 ])
 
 const fetchEnergyData = () => {
-    return fetch("http://127.0.0.1:8000/energy/" + userStore.user?.user_id)
+    return fetch(api_url + "/energy/" + userStore.user?.user_id)
     .then((response) => response.json())
     .catch((error) => {
         console.log(error)
@@ -123,7 +124,7 @@ const submitForm = async () => {
 }
 
 const postEnergy = (energyObj : Object) => {
-    return fetch("https://api-hlzv.onrender.com/energy/ml/image_story", {
+    return fetch(api_url + "/energy/ml/image_story", {
         method: "POST",
         body: JSON.stringify(energyObj),
         headers : {
@@ -140,7 +141,7 @@ const postEnergy = (energyObj : Object) => {
 }
 
 const updateEnergy = (energyObj: Object, day: string) => {
-    return fetch("https://api-hlzv.onrender.com/energy/" + userStore.user?.user_id + "/" + day, {
+    return fetch(api_url + "/energy/" + userStore.user?.user_id + "/" + day, {
         method: "PUT",
         body: JSON.stringify(energyObj),
         headers : {

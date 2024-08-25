@@ -5,6 +5,7 @@ import { UserDetails } from '../models/Interfaces';
 import { ref, computed } from 'vue';
 import { useUserStore } from '../stores/UserStore';
 import { useToast } from 'vue-toastification';
+import { api_url } from './api/api_url';
 
     const userStore = useUserStore()
     const toast = useToast()
@@ -209,7 +210,7 @@ import { useToast } from 'vue-toastification';
     }
 
     const postUserDetails = (userDetails : UserDetails) => {
-        return fetch("https://api-hlzv.onrender.com/user_details", {
+        return fetch(api_url, {
             method: "POST",
             body: JSON.stringify(userDetails),
             headers : {
@@ -226,7 +227,7 @@ import { useToast } from 'vue-toastification';
     }
 
     const updateUserDetails = (userDetails : UserDetails) => {
-        return fetch("https://api-hlzv.onrender.com/user_details/" + userDetails.user_id, {
+        return fetch(api_url + userDetails.user_id, {
             method: "PUT",
             body: JSON.stringify(userDetails),
             headers : {

@@ -8,6 +8,7 @@ import { UserInterface } from '../models/Interfaces.ts';
 import { sha3_512 } from 'js-sha3';
 import { useUserStore } from '../stores/UserStore.ts';
 import { useRouter } from 'vue-router';
+import { api_url } from './api/api_url.ts';
 
 const router = useRouter();
 const userStore = useUserStore();
@@ -51,7 +52,7 @@ const stopValidation = (field : keyof typeof formData) => {
 const users = ref([{} as UserInterface])
 
 const fetchUsers = () => {
-    return fetch("https://api-hlzv.onrender.com/users")
+    return fetch(api_url + "/users")
     .then((response) => response.json())
     .catch((error) => {
        throw error
