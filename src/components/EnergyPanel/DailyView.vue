@@ -235,6 +235,8 @@ onMounted(() => {
                 Save data
             </VButton>
             <VButton v-else disabled type="submit" class="mb-20px text-base font-semibold animate-spin">
+                <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+                </svg>
                 Processing...
             </VButton>
         </div>
