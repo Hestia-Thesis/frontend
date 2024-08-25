@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import { ref, computed, watch } from "vue";
 import { User } from "../models/Classes";
 import { UserInterface, UserDetails } from "../models/Interfaces";
+import { api_url } from "../components/api/api_url";
 
 export const useUserStore = defineStore("user", () => {
     // State
@@ -30,7 +31,7 @@ export const useUserStore = defineStore("user", () => {
 
     const setUserDetails = () => {
         if (user.value != undefined) {
-            fetch("http://127.0.0.1:8000/user_details" + user.value.user_id)
+            fetch(api_url + "/user_details" + user.value.user_id)
                 .then((response) => response.json())
                 .then((data) => {
                     user.value!.userDetails = data[0];

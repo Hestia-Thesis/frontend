@@ -210,7 +210,7 @@ import { api_url } from './api/api_url';
     }
 
     const postUserDetails = (userDetails : UserDetails) => {
-        return fetch(api_url, {
+        return fetch(api_url + "/user_details", {
             method: "POST",
             body: JSON.stringify(userDetails),
             headers : {
