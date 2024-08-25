@@ -14,7 +14,7 @@ import VButton from '../components/VButton.vue'
                </div> 
             </div>
         </Section>
-        <div class="grid grid-cols-4 gap-10px mx-30px p-10px bg-themecolor-neutral-200">
+        <div class="grid grid-cols-4 gap-10px mx-30px p-10px bg-themecolor-neutral-300">
             <img class="" src="../assets/Generated-Pic1.jpg">
             <img src="../assets/Generated-Pic2.jpg">
             <img src="../assets/Generated-Pic3.jpg">
