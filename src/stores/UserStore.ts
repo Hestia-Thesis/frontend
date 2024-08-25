@@ -31,7 +31,7 @@ export const useUserStore = defineStore("user", () => {
 
     const setUserDetails = () => {
         if (user.value != undefined) {
-            fetch(api_url + "/user_details" + user.value.user_id)
+            fetch(api_url + "/user_details/" + user.value.user_id)
                 .then((response) => response.json())
                 .then((data) => {
                     user.value!.userDetails = data[0];
