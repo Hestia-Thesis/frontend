@@ -16,7 +16,6 @@ export const useUserStore = defineStore("user", () => {
             email: userInput.email,
             password: userInput.password,
             userDetails: {
-                user_id: userInput.user_id,
             } as UserDetails,
         };
         user.value = userObj;
