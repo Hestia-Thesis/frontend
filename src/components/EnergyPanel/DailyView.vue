@@ -234,10 +234,9 @@ onMounted(() => {
             <VButton v-if="!isProcessing" @click="submitForm" type="submit" class="mb-20px text-base font-semibold">
                 Save data
             </VButton>
-            <VButton v-else disabled type="submit" class="mb-20px text-base font-semibold">
-                <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
-                    <!-- ... -->
-                </svg>
+            <VButton v-else disabled type="submit" class="mb-20px flex text-base font-semibold">
+                <img src="../../assets/progress_activity.svg" class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+                </img>
                 Processing...
             </VButton>
         </div>
