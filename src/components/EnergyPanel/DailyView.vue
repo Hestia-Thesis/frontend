@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import VInput from '../VInput.vue';
+import VIcon from '../VIcon.vue';
 import VButton from '../VButton.vue';
 import { ref, reactive, onMounted} from 'vue';
 import { useUserStore } from '../../stores/UserStore';
@@ -234,10 +235,8 @@ onMounted(() => {
             <VButton v-if="!isProcessing" @click="submitForm" type="submit" class="mb-20px text-base font-semibold">
                 Save data
             </VButton>
-            <VButton v-else disabled type="submit" class="mb-20px flex text-base font-semibold">
-                <img src="../../assets/progress_activity.svg" class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
-                </img>
-                Processing...
+            <VButton v-else disabled type="submit" class="mb-20px text-base font-semibold">
+                <VIcon name="progress_activity"/> Processing...
             </VButton>
         </div>
     </div>
