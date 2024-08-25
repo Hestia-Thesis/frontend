@@ -1,1 +1,1 @@
-export const api_url = "https://api-hlzv.onrender.com/energy/"
+export const api_url = "https://hestia-api.onrender.com/"
