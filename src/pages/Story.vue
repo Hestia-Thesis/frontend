@@ -38,7 +38,6 @@ const decodeImage = (base64: string) => {
     for (let i = 0; i < binaryString.length; i++) {
         bytes[i] = binaryString.charCodeAt(i);
     }
-    console.log(bytes.buffer)
     return bytes.buffer;
 }
 const loadImage = (base64: string) => {
