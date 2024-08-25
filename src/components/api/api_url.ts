@@ -1,1 +1,1 @@
-export const api_url = "https://hestia-api.onrender.com/"
+export const api_url = "https://hestia-api.onrender.com"
