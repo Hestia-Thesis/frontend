@@ -235,7 +235,7 @@ onMounted(() => {
                 Save data
             </VButton>
             <VButton v-else disabled type="submit" class="mb-20px text-base font-semibold">
-                <p class="animate-pulse">Processing...</p>
+                Processing...
             </VButton>
         </div>
     </div>
