@@ -193,7 +193,7 @@ import { api_url } from './api/api_url';
 
     const submitForm = async () => {
         const response = ref()
-        if (userStore.hasUserDetails) {
+        if (userStore.user?.userDetails?.user_id) {
             response.value = await updateUserDetails(formData.value)
         }
         else {
