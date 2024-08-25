@@ -123,7 +123,7 @@ const submitForm = async () => {
 }
 
 const postEnergy = (energyObj : Object) => {
-    return fetch("http://127.0.0.1:8000/energy/ml", {
+    return fetch("https://api-hlzv.onrender.com/energy/ml/image_story", {
         method: "POST",
         body: JSON.stringify(energyObj),
         headers : {
@@ -140,7 +140,7 @@ const postEnergy = (energyObj : Object) => {
 }
 
 const updateEnergy = (energyObj: Object, day: string) => {
-    return fetch("http://127.0.0.1:8000/energy/" + userStore.user?.user_id + "/" + day, {
+    return fetch("https://api-hlzv.onrender.com/energy/" + userStore.user?.user_id + "/" + day, {
         method: "PUT",
         body: JSON.stringify(energyObj),
         headers : {

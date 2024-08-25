@@ -95,7 +95,7 @@ const stopValidation = (field : keyof typeof formData) => {
 };
 
 const postUser = (user : UserInterface) => {
-    return fetch("http://127.0.0.1:8000/users", {
+    return fetch("https://api-hlzv.onrender.com/users", {
         method: "POST",
         body: JSON.stringify({
             email: user.email,
@@ -115,7 +115,7 @@ const postUser = (user : UserInterface) => {
 }
 
 const fetchUsers = () => {
-    return fetch("http://127.0.0.1:8000/users")
+    return fetch("https://api-hlzv.onrender.com/users")
     .then((response) => response.json())
     .catch((error) => {
         console.log(error)

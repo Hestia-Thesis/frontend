@@ -209,7 +209,7 @@ import { useToast } from 'vue-toastification';
     }
 
     const postUserDetails = (userDetails : UserDetails) => {
-        return fetch("http://127.0.0.1:8000/user_details", {
+        return fetch("https://api-hlzv.onrender.com/user_details", {
             method: "POST",
             body: JSON.stringify(userDetails),
             headers : {
@@ -226,7 +226,7 @@ import { useToast } from 'vue-toastification';
     }
 
     const updateUserDetails = (userDetails : UserDetails) => {
-        return fetch("http://127.0.0.1:8000/user_details/" + userDetails.user_id, {
+        return fetch("https://api-hlzv.onrender.com/user_details/" + userDetails.user_id, {
             method: "PUT",
             body: JSON.stringify(userDetails),
             headers : {

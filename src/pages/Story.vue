@@ -48,7 +48,7 @@ const loadImage = (base64: string) => {
 }
 
 const fetchEnergyData = () => {
-    return fetch("http://127.0.0.1:8000/img_story/" + userStore.user?.user_id)
+    return fetch("https://api-hlzv.onrender.com/img_story/" + userStore.user?.user_id)
     .then((response) => response.json())
     .catch((error) => {
         console.log(error)

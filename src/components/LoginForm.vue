@@ -51,7 +51,7 @@ const stopValidation = (field : keyof typeof formData) => {
 const users = ref([{} as UserInterface])
 
 const fetchUsers = () => {
-    return fetch("http://127.0.0.1:8000/users")
+    return fetch("https://api-hlzv.onrender.com/users")
     .then((response) => response.json())
     .catch((error) => {
        throw error
