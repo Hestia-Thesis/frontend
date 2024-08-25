@@ -6,6 +6,8 @@ import { useUserStore } from '../../stores/UserStore';
 import { useToast } from 'vue-toastification';
 import { api_url } from '../api/api_url';
 
+const isProcessing = ref(false);
+
 const toast = useToast()
 const userStore = useUserStore();
 
@@ -90,6 +92,7 @@ const fetchEnergyData = () => {
 
 
 const submitForm = async () => {
+    isProcessing.value = true
     const amtOfCalls= ref(0)
     const amtOfOks = ref(0)
     for(const obj of formData) {
@@ -107,6 +110,7 @@ const submitForm = async () => {
             }
             else {
                 alert("Failed to save energy data of " + obj.day)
+                isProcessing.value = false
                 throw new Error("Failed to save value")
             }
 
@@ -116,15 +120,17 @@ const submitForm = async () => {
 
     if(amtOfOks.value < amtOfCalls.value) {
             alert("Failed to save energy data")
+            isProcessing.value = false
         }
         else {
             alert("Successfully saved energy data")
+            isProcessing.value = false
         }
 
 }
 
 const postEnergy = (energyObj : Object) => {
-    return fetch(api_url + "/energy/ml/image_story", {
+    return fetch(api_url + "/energy/ml/image_story/" + 1000, {
         method: "POST",
         body: JSON.stringify(energyObj),
         headers : {
@@ -225,8 +231,11 @@ onMounted(() => {
             </div>
         </div>
         <div>
-            <VButton @click="submitForm" type="submit" class="mb-20px text-base font-semibold">
+            <VButton v-if="!isProcessing" @click="submitForm" type="submit" class="mb-20px text-base font-semibold">
                 Save data
+            </VButton>
+            <VButton v-else disabled type="submit" class="mb-20px text-base font-semibold animate-spin">
+                Processing...
             </VButton>
         </div>
     </div>
