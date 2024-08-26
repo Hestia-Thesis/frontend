@@ -81,7 +81,7 @@ onMounted(() => {
             <div class="text-base font-medium mb-40px">
                 {{ loadedStoryData.date }}
             </div>
-            <img class="mx-auto w-120 h-120 mb-20px" :src="loadedStoryData.image_data" alt="Loaded Image" v-if="loadedStoryData.image_data">
+            <img class="mx-auto w-120 h-120 mb-20px" :src="loadedStoryData.image_data" alt="Enjoy your story!" v-if="loadedStoryData.image_data">
             <div>
                 {{ loadedStoryData.story }}
             </div>
