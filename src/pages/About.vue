@@ -16,7 +16,7 @@ import Section from '../components/Section.vue'
                     How it works?
                 </p>
                 <p>
-                    Every day you have a change to fill in how much energy you consumed over the most recent 5 days. Once the application knows your energy consumption information, the app can generate daily stories based on how high or low your energy usage is. If the energy consumption is better than expected, a very bright and positive story will start to develop. Is the energy you consume that day causing too much pollution, the story will get polluted too.
+                    Every day you have a change to fill in how much energy you consumed over the most recent 5 days. Once the application knows your energy consumption information, the app can generate daily stories based on how high or low your energy usage is. If the energy consumption is better than expected, a very bright and positive story will start to develop. Is the energy that you consume that day causing too much pollution, the story will get polluted too.
                 </p>
                 <p class="font-medium mt-24px">
                     How do we do this?
